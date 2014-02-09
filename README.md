@@ -5,15 +5,15 @@ This project contains a Dockerfile and an example config file to run the docker-
 ## Usage
 
 ```
-docker build -t <yourname>/docker-registry:standlone .
-IMAGE_ID=$(docker images | head -n 2 | tail -n 1 | awk '{print $3}')
-REGISTRY_ID=$(docker run -d -p 5000:5000 -v $(pwd)/cache:/registry $IMAGE_ID)
+$ docker build -t <yourname>/docker-registry:standlone .
+$ IMAGE_ID=$(docker images | head -n 2 | tail -n 1 | awk '{print $3}')
+$ REGISTRY_ID=$(docker run -d -p 5000:5000 -v $(pwd)/cache:/registry $IMAGE_ID)
 ```
 
 Now you can upload your newly created image (from `docker build -t`) to your newly running docker registry.
 
 ```
-docker push localhost:5000/docker-registry
+$ docker push localhost:5000/docker-registry
 The push refers to a repository [localhost:5000/docker-registry] (len: 1)
 Sending image list
 Pushing repository localhost:5000/docker-registry (1 tags)

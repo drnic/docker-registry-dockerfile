@@ -11,6 +11,13 @@ $ IMAGE_ID=$(docker images | head -n 2 | tail -n 1 | awk '{print $3}')
 $ REGISTRY_ID=$(docker run -d -p 5000:5000 -v $(pwd)/cache:/registry $IMAGE_ID)
 ```
 
+Quick check that the registry is running.
+
+```
+$ curl http://localhost:5000/v1/_ping
+true
+```
+
 Now you can upload your newly created image (from `docker build -t`) to your newly running docker registry.
 
 ```

@@ -20,6 +20,8 @@ true
 
 Now you can upload your newly created image (from `docker build -t`) to your newly running docker registry.
 
+Yes, technically you are pushing the docker-registry's own image to itself. So meta.
+
 ```
 $ docker push localhost:5000/docker-registry
 The push refers to a repository [localhost:5000/docker-registry] (len: 1)

@@ -5,6 +5,7 @@ This project contains a Dockerfile and an example config file to run the docker-
 ## Usage
 
 ```
+$ git submodule update --init
 $ docker build -t <yourname>/docker-registry:standlone .
 $ IMAGE_ID=$(docker images | head -n 2 | tail -n 1 | awk '{print $3}')
 $ REGISTRY_ID=$(docker run -d -p 5000:5000 -v $(pwd)/cache:/registry $IMAGE_ID)
